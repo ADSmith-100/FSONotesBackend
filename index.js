@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
@@ -11,6 +12,7 @@ const requestLogger = (request, response, next) => {
 
 app.use(express.json());
 app.use(requestLogger);
+app.use(cors());
 
 let notes = [
   {
