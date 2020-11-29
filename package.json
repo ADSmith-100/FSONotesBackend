@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
     "build:ui": "rm -rf build && cd ../fso-notes/ && npm run build --prod && cp -r build ../FSOBackend/",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
@@ -18,9 +18,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "lodash": "^4.17.20",
     "mongoose": "^5.10.15"
   },
   "devDependencies": {
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6"
   }
 }
